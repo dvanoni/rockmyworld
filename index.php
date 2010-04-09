@@ -22,8 +22,8 @@
 		<div id='tags-div' style='display:none;'>
 		</div>
 		<div id='tag-results-div' style='display:none;'></div>
-		<div id='maps-div'></div>
 		<div id='photos-div'></div>
+		<div id='maps-div'></div>
 		
 	</div>
 	<div id='footer'>
