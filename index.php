@@ -5,106 +5,13 @@
 	<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">	
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link name="apple-touch-startup-image" href="/images/startup.png">
+	<link name="apple-touch-startup-image" href="images/startup.png">
 	<script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 	<script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js'></script>
  	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAJthGY8atuRTbW0lLRBHl1hT0kzh_vIOjo5KaLA_k3-smoZ_YbBTT7B8DTKGgfLDw9RuScskT_iGjVQ&sensor=false" type="text/javascript"></script>
 	<script type="text/javascript" charset="utf-8" src='iscroll.js'></script>
 	<script type="text/javascript" charset="utf-8" src='rockmyworld.js'></script>
-	<style type='text/css'>
-		body {
-			margin:0;	
-			font-family:'Trebuchet MS',Verdana,Arial,sans-serif;
-			font-size:12px;
-			background:#595E64;
-			line-height:150%;
-		}
-		
-		IMG {
-			vertical-align:middle;
-		}
-		
-		#wrapper {
-			position:relative;
-			z-index:1;
-			height:416px;
-			overflow:hidden;
-		}
-		
-		#maps-div {
-			height:416px;
-		}
-		
-		#tag-results-div {
-			min-height:416px;
-		}
-		
-		#footer {
-			background: url('footer-bg.png') repeat-x;
-			background-position: 50% 100%;
-			display:block;
-			height:44px;
-			width:100%;
-		}
-		
-		#results {
-		}
-		
-		.venue-title {
-			color:#EEE;
-			font-weight:bold;
-		}
-		
-		.icon {
-			float:left;
-			width:40px;
-			height:40px;
-			margin: 2px 8px;
-		}
-				
-		.event {
-			background:url(bg.png) repeat-x;
-			width:100%;
-			color:#EEE;
-			margin-bottom:4px;
-			height:60px;
-		}
-		
-		.title {
-			background:#000;
-			color:#fff;
-			font-size:12px;
-			text-align:center;
-			padding:1px;
-		}
-		
-		.event-info {
- 			clear:both;
-			display:none;
-			font-size:14px;
-			color:#AAA;
-			margin: 0 8px 8px 8px;
-		}
-		
-		.event-padding {
-			padding:20px 8px 0px 8px;
-		}
-		
-		.event-title {
-			font-size:18px;
-			text-transform: uppercase;
-			font-variant: small-caps;
-			color:#2A2829;
-		}
-		
-		.date {
-			float:left;
-			color:#FFF;
-			font-size:20px;
-			font-weight:bold;
-			width:52px;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="rockmyworld.css">
 
 </head>
 <body>
