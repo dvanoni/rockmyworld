@@ -34,6 +34,10 @@
 			height:416px;
 		}
 		
+		#tag-results-div {
+			min-height:416px;
+		}
+		
 		#footer {
 			background: url('footer-bg.png') repeat-x;
 			background-position: 50% 100%;
@@ -108,7 +112,9 @@
 		</div>
 		<div id='tags-div' style='display:none;'>
 		</div>
+		<div id='tag-results-div' style='display:none;'></div>
 		<div id='maps-div'></div>
+		
 	</div>
 	<div id='footer'>
 		<div class='icon' onclick='loadDiv("results");'>

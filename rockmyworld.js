@@ -13,50 +13,7 @@ function handler( loc ) {
 		// Loop through events and output HTML for the event
 		var html = "<div class='title'>Concerts Nearby</div>";
 		for( var i = 0; i < events.length; i++ ) {
-			
-			var d = new Date( events[i].date * 1000 );
-			
-			var artist = events[i].artist;
-			if( events[i].artist.length > 22 ) {
-				artist = events[i].artist.substr(0, 22) + "&hellip;";
-			}
-			
-			// Use the array ID of the event to access event data
-			html += "<div onclick='openEvent(" + i + ");' class='event'>" + 
-					"<div class='event-padding'>" +
-						"<div class='date'>" + d.getMonth() + "/" + d.getDate() + "</div>" +
-						"<span class='event-title'>" + artist + "</span>" +
-					"</div>" +
-				"</div>" + 
-				"<div id='event" + i + "' class='event-info'>" + 
-					"<div style='float:right;'>" +
-						"<a href='youtube/request.php?query=" + events[i].artist + "'><img src='images/youtube.png'></a>" +
-					"</div>" +
-					"<div style='margin:8px 0 8px 0;font-size:14px;color:#EEE;'>" + events[i].artist + "</div>"
-					"<div style='padding:0 8px 8px 8px;'>";
-					
-			if( events[i].description )
-				html += "<div style='font-size:12px;line-height:150%;'>" + events[i].description + "</div>"
-				
-			if( events[i].venueLocation.point ) {
-				html += "<div class='venue-title'>VENUE</div>";
-				
-				if( events[i].venueName )
-					html += "<div>" + events[i].venueName + "</div>";
-					
-				if( events[i].venueLocation.street )
-					html += "<div>" + events[i].venueLocation.street + "</div>";
-					
-				if( events[i].venueLocation.city )
-					html += "<div>" + events[i].venueLocation.city + "</div>"
-					
-			} else {
-				html += "<div class='venue-title'>VENUE</div>" + 
-						"<div>" + events[i].venueName + "</div>";
-			}
-			
-			html += "</div>" + 
-				"</div>";
+			html += getEventHtml(events[i], i, 'results');
 		}
 		
 		// Append HTML to the page
@@ -91,6 +48,54 @@ function handler( loc ) {
 	});
 }
 
+function getEventHtml( event, index, thingy )  {
+	var d = new Date( event.date * 1000 );		
+	var artist = event.artist;
+	var html = "";
+	if( event.artist.length > 22 ) {
+		artist = event.artist.substr(0, 22) + "&hellip;";
+	}
+	
+	// Use the array ID of the event to access event data
+	html += "<div onclick='openEvent(\"" + index + thingy + "\");' class='event'>" + 
+			"<div class='event-padding'>" +
+				"<div class='date'>" + d.getMonth() + "/" + d.getDate() + "</div>" +
+				"<span class='event-title'>" + artist + "</span>" +
+			"</div>" +
+		"</div>" + 
+		"<div id='event" + index + thingy + "' class='event-info'>" + 
+			"<div style='float:right;'>" +
+				"<a href='youtube/request.php?query=" + event.artist + "'><img src='images/youtube.png'></a>" +
+			"</div>" +
+			"<div style='margin:-4px 0 8px 0;font-size:14px;color:#EEE;'>" + event.artist + "</div>"
+			"<div style='padding:0 8px 8px 8px;'>";
+			
+	if( event.description )
+		html += "<div style='font-size:12px;line-height:150%;'>" + event.description + "</div>"
+		
+	if( event.venueLocation.point ) {
+		html += "<div class='venue-title'>VENUE</div>";
+		
+		if( event.venueName )
+			html += "<div>" + event.venueName + "</div>";
+			
+		if( event.venueLocation.street )
+			html += "<div>" + event.venueLocation.street + "</div>";
+			
+		if( event.venueLocation.city )
+			html += "<div>" + event.venueLocation.city + "</div>"
+			
+	} else {
+		html += "<div class='venue-title'>VENUE</div>" + 
+				"<div>" + event.venueName + "</div>";
+	}
+	
+	html += "</div>" + 
+		"</div>";
+	
+	return html;
+}
+
 function openEvent( eventId ) {
 	$( '#event' + eventId ).slideToggle('fast');
 }
@@ -100,7 +105,7 @@ function loadURL( divId, URL ) {
 		$.getJSON( URL, {lat: document.coords.latitude, long: document.coords.longitude }, function(data) {
 			var html = "<div class='title'>Tagged Nearby</div>";
 			for( key in data ) {
-				html += "<div class='event' onclick='slideTags();'>" + 
+				html += "<div class='event' onclick='slideTags(\""+key+"\");'>" + 
 						"<div class='event-padding'>" +
 							"<span class='event-title' style='font-weight:" + (data[key] * 100) + "'>" + key + "</span>" +
 						"</div>" +
@@ -118,8 +123,30 @@ function loadURL( divId, URL ) {
 	});
 }
 
-function slideTags() {
-	$('#wrapper').hide("slide", { direction: "left" }, 200);
+function slideTags( tag ) {
+	// Loop through events and output HTML for the event
+	var html = "<div class='title'>Concerts Tagged \"" +tag+ "\" Nearby</div>";
+	var events = document.events;
+	for( var i = 0; i < events.length; i++ ) {
+		if (events[i].tags != null) {
+			//alert(events[i].tags.tag);
+			for (var j = 0; j < events[i].tags.tag.length; j++) {
+				//alert(events[i].tags.tag[j]);
+				if (events[i].tags.tag[j] == tag) {
+					html += getEventHtml(events[i], i, 'tags');
+				}
+			}
+		}
+	}
+	
+	// Append HTML to the page
+	$('#tag-results-div').html( html );
+	$('#tags-div').hide("slide", { direction: "left" }, 200);
+	$('#tag-results-div').show("slide", { direction: "right" }, 200);
+	document.selected_div = "tag-results-div";
+	setTimeout( function() {
+			$('#wrapper').slideDown();
+		}, 500);
 }
 
 function loadDiv( divId ) {
