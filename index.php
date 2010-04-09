@@ -59,6 +59,12 @@
 			height:60px;
 		}
 		
+		.event-info {
+ 			clear:both;
+			display:none;
+			font-size:12px;
+		}
+		
 		.event-padding {
 			padding:16px 8px;
 		}
