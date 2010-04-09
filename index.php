@@ -59,7 +59,7 @@
 			height:60px;
 		}
 		
-		.tags-title {
+		.title {
 			background:#000;
 			color:#fff;
 			font-size:10px;
