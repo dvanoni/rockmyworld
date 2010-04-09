@@ -74,6 +74,7 @@ function loadURL( divId, URL ) {
 			var html = "";
 			for( key in data ) {
 				html += "<div class='event'>" + 
+						"<div class='title'>Nearby Tags</div>" +
 						"<div class='event-padding'>" +
 							"<span class='event-title' style='font-weight:" + (data[key] * 100) + "'>" + key + "</span>" +
 						"</div>" +
