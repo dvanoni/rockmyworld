@@ -103,7 +103,7 @@
 		<div id='maps-div'></div>
 	</div>
 	<div id='footer'>
-		<div class='icon' onclick='loadURL("tags-div", "tags.php");$("#tags-div").html("<div class=\'tags-title\'>Tagged Nearby</div>");'>
+		<div class='icon' onclick='loadURL("tags-div", "tags.php");'>
 			<img src='images/tags.png' width='40px'>
 		</div>
 		<div class='icon' onclick='loadDiv("maps-div");'>
