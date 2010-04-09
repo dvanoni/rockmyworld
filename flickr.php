@@ -12,10 +12,14 @@ $obj = json_decode( file_get_contents( $url ) );
 $sizes = $obj->query->results->size;
 //echo print_r($sizes);
 
-foreach ($sizes as $key => $value) {
-	$img_src = $value->source;
-	if (preg_match('/.+_m.jpg$/', $img_src)) {
-		echo "<div><img src=\"$img_src\" width=\"320\"/></div>";
+if( count( $sizes ) == 0 ) {
+	echo "<div style='padding:16px;font-size:16px;text-align:center;'>No images available!</div>";
+} else {
+	foreach ($sizes as $key => $value) {
+		$img_src = $value->source;
+		if (preg_match('/.+_m.jpg$/', $img_src)) {
+			echo "<div><img src=\"$img_src\" width=\"320\"/></div>";
+		}
 	}
 }
 
