@@ -11,11 +11,22 @@ img {
 	border: none;
 }
 
+#loading {
+    text-align:center;
+    font-size:20px;
+    color:#FFF;
+    padding-top:150px;
+}
+
 #wrapper {
 	position:relative;
 	z-index:1;
 	height:416px;
 	overflow:hidden;
+}
+
+#photos-div {
+    height:416px;
 }
 
 #maps-div {

@@ -108,7 +108,8 @@ function getEventHtml( event, index, thingy )  {
 			"<div style='float:right;'>" +
 				"<img src='images/flickr.png' onClick='getPhotos(\"" + event.artist + "\")'>" +
 			"</div>" +
-			"<div style='margin:8px 0 8px 0;font-size:14px;color:#EEE;'>" + event.artist + "</div>"
+			"<div style='margin:8px 0 0px 0;font-size:14px;color:#EEE;'>" + event.artist + "</div>" +
+			"<div style='margin:0px 0 8px 0;font-size:12px;color:#999;'>" + d.toLocaleTimeString() + "</div>"+
 			"<div style='padding:0 8px 8px 8px;'>";
 			
 	if( event.description )
@@ -143,7 +144,9 @@ function getEventHtml( event, index, thingy )  {
 function getPhotos( artist ) {
 	alert(artist);
 	$.post("flickr.php", {'query':artist}, function(result) {
+		
 		$("#photos-div").html(result);
+		
 		// Hide the selected tab
 		$('#' + document.selected_div ).hide("slide", { direction: "left" }, 200);
 		$("#photos-div").show("slide", { direction: "right" }, 200);

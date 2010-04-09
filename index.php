@@ -22,9 +22,8 @@
 		<div id='tags-div' style='display:none;'>
 		</div>
 		<div id='tag-results-div' style='display:none;'></div>
-		<div id='photos-div'></div>
+		<div id='photos-div' style='display:none'></div>
 		<div id='maps-div'></div>
-		
 	</div>
 	<div id='footer'>
 		<div class='icon' onclick='loadDiv("results");'>
@@ -37,5 +36,8 @@
 			<img src='images/map.png' width='40px'>
 		</div>
 	</div>
+	<div id='loading'>
+		Loading please wait...
+	</div>	
 </body>	
 </html>
