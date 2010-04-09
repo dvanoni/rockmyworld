@@ -107,8 +107,9 @@ function getEventHtml( event, index, thingy )  {
 		html += "<div style='font-size:12px;line-height:150%;'>" + event.description + "</div>"
 		
 	if( event.venueLocation.point ) {
-		html += "<div class='venue-title'>VENUE</div>";
-		
+		html += "<div class='venue-title'>VENUE</div>"+ 
+				"<div onclick='centerMap(" + event.venueLocation.point.lat + ", " + event.venueLocation.point.long + ");'>" + 
+
 		if( event.venueName )
 			html += "<div>" + event.venueName + "</div>";
 			
@@ -116,7 +117,9 @@ function getEventHtml( event, index, thingy )  {
 			html += "<div>" + event.venueLocation.street + "</div>";
 			
 		if( event.venueLocation.city )
-			html += "<div>" + event.venueLocation.city + "</div>"
+			html += "<div>" + event.venueLocation.city + "</div>";
+			
+		html += "</div>";
 			
 	} else {
 		html += "<div class='venue-title'>VENUE</div>" + 
