@@ -78,7 +78,7 @@
 			display:none;
 			font-size:14px;
 			color:#AAA;
-			margin-bottom:8px;
+			margin-bottom: 0 8px 8px 8px;
 		}
 		
 		.event-padding {
