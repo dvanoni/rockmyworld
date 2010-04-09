@@ -32,7 +32,7 @@ function handler( loc ) {
 					"<div style='float:right;'>" +
 						"<a href='youtube/request.php?query=" + events[i].artist + "'><img src='images/youtube.png'></a>" +
 					"</div>" +
-					"<div style='margin:-4px 0 8px 0;font-size:14px;color:#EEE;'>" + events[i].artist + "</div>"
+					"<div style='margin:8px 0 8px 0;font-size:14px;color:#EEE;'>" + events[i].artist + "</div>"
 					"<div style='padding:0 8px 8px 8px;'>";
 					
 			if( events[i].description )
