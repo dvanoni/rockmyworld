@@ -63,7 +63,8 @@ function handler( loc ) {
 }
 
 function openEvent( eventId ) {
-	$("#results").hide("slide", { direction: "down" }, 1000);
+	alert("hello");
+	//$("#wrapper").hide("slide", { direction: "left" }, 1000);
 }
 
 function loadURL( divId, URL ) {
