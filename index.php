@@ -16,6 +16,7 @@
 			font-family:'Trebuchet MS',Verdana,Arial,sans-serif;
 			font-size:12px;
 			background:#493736;
+			line-height:150%;
 		}
 		
 		IMG {
