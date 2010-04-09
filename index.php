@@ -89,6 +89,7 @@
 			font-size:18px;
 			text-transform: uppercase;
 			font-variant: small-caps;
+			color:#E9E897;
 		}
 		
 		.date {
