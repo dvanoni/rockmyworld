@@ -29,15 +29,22 @@ function handler( loc ) {
 					"</div>" +
 				"</div>" + 
 				"<div id='event" + i + "' class='event-info'>" + 
-					"<div style='padding:0 8px 8px 8px;'>";
+					"<div style='padding:0 8px 8px 8px;'><div style='float:right;'><img src='" + events[i].image + "'></div>";
 					
 			if( events[i].venueLocation.point ) {
-				html += "<div>VENUE</div>" + 
-						"<div>" + events[i].venueName + "</div>" + 
-						"<div>" + events[i].venueLocation.street + "</div>" + 
-						"<div>" + events[i].venueLocation.city + ", " + events[i].venueLocation.postalcode + " </div>";
+				html += "<div class='venue-title'>VENUE</div>";
+				
+				if( events[i].venueName )
+					html += "<div>" + events[i].venueName + "</div>";
+					
+				if( events[i].venueLocation.street )
+					html += "<div>" + events[i].venueLocation.street + "</div>";
+					
+				if( events[i].venueLocation.city )
+					html += "<div>" + events[i].venueLocation.city + "</div>"
+					
 			} else {
-				html += "<div>VENUE</div>" + 
+				html += "<div class='venue-title'>VENUE</div>" + 
 						"<div>" + events[i].venueName + "</div>";
 			}
 			
@@ -78,7 +85,7 @@ function handler( loc ) {
 }
 
 function openEvent( eventId ) {
-	$( '#event' + eventId ).slideToggle();
+	$( '#event' + eventId ).slideToggle('fast');
 }
 
 function loadURL( divId, URL ) {

@@ -44,6 +44,11 @@
 		#results {
 		}
 		
+		.venue-title {
+			color:#EEE;
+			font-weight:bold;
+		}
+		
 		.icon {
 			float:left;
 			width:40px;
