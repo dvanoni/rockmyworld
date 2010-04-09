@@ -78,6 +78,7 @@
 			display:none;
 			font-size:14px;
 			color:#AAA;
+			margin-bottom:8px;
 		}
 		
 		.event-padding {
