@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div id='loading'>
-		Loading please wait...
+		Loading...
 	</div>	
 </body>	
 </html>
