@@ -63,7 +63,7 @@
  			clear:both;
 			display:none;
 			font-size:16px;
-			color:#FFF;
+			color:#AAA;
 		}
 		
 		.event-padding {
