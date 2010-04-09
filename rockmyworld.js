@@ -81,6 +81,10 @@ function handler( loc ) {
 	});
 }
 
+function centerMap( latitude, longitude ) {
+	map.setCenter(new GLatLng( latitude, longitude ), 10 );
+}
+
 function getEventHtml( event, index, thingy )  {
 	var d = new Date( event.date * 1000 );		
 	var artist = event.artist;
@@ -108,7 +112,7 @@ function getEventHtml( event, index, thingy )  {
 		
 	if( event.venueLocation.point ) {
 		html += "<div class='venue-title'>VENUE</div>"+ 
-				"<div onclick='centerMap(" + event.venueLocation.point.lat + ", " + event.venueLocation.point.long + ");'>" + 
+				"<div onclick='centerMap(" + event.venueLocation.point.lat + ", " + event.venueLocation.point.long + ");'>"; 
 
 		if( event.venueName )
 			html += "<div>" + event.venueName + "</div>";
