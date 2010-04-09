@@ -26,6 +26,10 @@ img {
 	min-height:416px;
 }
 
+#photos-div {
+	height:416px;
+}
+
 #footer {
 	background: url('footer-bg.png') repeat-x;
 	background-position: 50% 100%;
