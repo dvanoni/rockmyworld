@@ -210,7 +210,11 @@ function loadURL( divId, URL ) {
 			$('#' + divId ).show();
 			document.selected_div = divId;
 			$('#wrapper').slideDown();
-			myScroll = new iScroll( document.getElementById( divId ) );
+			
+			setTimeout( function() {
+				var myScroll = new iScroll( document.getElementById( "tags-div" ) );
+			}, 500 );
+			
 		});
 	});
 }
