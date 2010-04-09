@@ -97,7 +97,7 @@ function loadURL( divId, URL ) {
 		$.getJSON( URL, {lat: document.coords.latitude, long: document.coords.longitude }, function(data) {
 			var html = "<div class='title'>Tagged Nearby</div>";
 			for( key in data ) {
-				html += "<div class='event'>" + 
+				html += "<div class='event' onclick='slideTags();'>" + 
 						"<div class='event-padding'>" +
 							"<span class='event-title' style='font-weight:" + (data[key] * 100) + "'>" + key + "</span>" +
 						"</div>" +
@@ -113,6 +113,10 @@ function loadURL( divId, URL ) {
 			myScroll = new iScroll( document.getElementById( divId ) );
 		});
 	});
+}
+
+function slideTags() {
+	$('#wrapper').hide("slide", { direction: "left" }, 200);
 }
 
 function loadDiv( divId ) {
