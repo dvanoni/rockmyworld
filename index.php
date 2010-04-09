@@ -17,8 +17,7 @@
 </head>
 <body>
 	<div id='wrapper'>
-		<div id='results'>
-		</div>
+		<div id='results'></div>
 		<div id='tags-div'></div>
 		<div id='tag-results-div'></div>
 		<div id='photos-div'></div>
