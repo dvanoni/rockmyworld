@@ -82,7 +82,7 @@
 		}
 		
 		.event-padding {
-			padding:16px 8px;
+			padding:20px 8px 0px 8px;
 		}
 		
 		.event-title {
