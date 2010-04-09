@@ -70,8 +70,9 @@ function handler( loc ) {
 						html += "</div>" + 
 							"</div>";
 					
-				    	marker.openInfoWindowHtml( html );
+				    	this.openInfoWindowHtml( html );
 				  	});
+				
 					map.addOverlay(marker);
 				}
 			}
