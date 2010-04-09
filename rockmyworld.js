@@ -32,6 +32,7 @@ function handler( loc ) {
 					"<div style='padding:0 8px 8px 8px;'>";
 					
 			if( events[i].venueLocation.point ) {
+				alert( events[i] );
 				html += "<div>" + events[i].venueName + "</div>" + 
 						"<div>" + events[i].venueLocation.street + "</div>" + 
 						"<div>" + events[i].venueLocation.city + ", " + events[i].venueLocation.postalcode + " </div>";
