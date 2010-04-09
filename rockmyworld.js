@@ -142,7 +142,6 @@ function getEventHtml( event, index, thingy )  {
 }
 
 function getPhotos( artist ) {
-	alert(artist);
 	$.post("flickr.php", {'query':artist}, function(result) {
 		
 		$("#photos-div").html(result);
