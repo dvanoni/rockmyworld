@@ -102,6 +102,17 @@ img {
 	color:#2A2829;
 }
 
+.weather {
+	background:#00C url(weatherbg.jpg);
+	color:#FFF;
+	height:20px;
+	}
+	
+.weather span {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 .date {
 	float:left;
 	color:#FFF;

@@ -5,6 +5,26 @@ function handler( loc ) {
 	var latitude  = loc.coords.latitude;
 	document.coords = loc.coords;
 	
+
+	var zipcode, weather = new Array();
+	
+	
+	// Load zip
+	$.getJSON( 'reversegeo.php', {lat: latitude, long: longitude, json: true }, function(data) { 
+		zipcode = data.zip; 
+	});
+	$.getJSON( 'weather.php', {zip: zipcode},  function(data) {
+			for (var p = 0; p < data.days.length; p++) {
+				weather[p] = '<div class="weather"><span style="float:left">'+data.days[p].date+'</span><span style="float:right;">'+data.days[p].text;
+				if (data.days[p].text == 'Mostly Sunny') { weather[p] += '<img src="weather-clear.png" height=20>'; }
+				if (data.days[p].text == 'Mostly Cloudy') { weather[p] += '<img src="cloudy.png" height=20>'; }
+				weather[p] += '</span></div>';
+			}
+			document.weather = weather;
+			//alert(document.weather);
+	});
+	
+	
 	var url = 'lastfm.php';
 	$.getJSON( url, {lat: latitude, long: longitude }, function(data) {
 		
@@ -14,7 +34,15 @@ function handler( loc ) {
 		
 		// Loop through events and output HTML for the event
 		var html = "<div class='title'>Concerts Nearby</div>";
+		html += document.weather[0];
+		var dt = new Date(events[0].date*1000);	
+		var printed_forecast = false;
 		for( var i = 0; i < events.length; i++ ) {
+			var dy = new Date (events[i].date*1000);
+			if (dy.getDate() != dt.getDate() && printed_forecast == false) {
+				html += document.weather[1];
+				printed_forecast = true;
+			}
 			html += getEventHtml(events[i], i, 'results');
 		}
 		
