@@ -148,10 +148,10 @@ function getPhotos( artist ) {
 		
 		// Hide the selected tab
 		$('#' + document.selected_div ).hide("slide", { direction: "left" }, 200);
-		$("#photos-div").show("slide", { direction: "right" }, 200);
-		document.selected_div = "photos-div";
-		
-		var myScroll = new iScroll( document.getElementById( "photos-div" ) );
+		$("#photos-div").show("slide", { direction: "right" }, 200, function() {
+			document.selected_div = "photos-div";
+			var myScroll = new iScroll( document.getElementById( "photos-div" ) );
+		});
 	}, "html");
 }
 
