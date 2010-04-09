@@ -180,7 +180,10 @@ function getPhotos( artist ) {
 		$('#' + document.selected_div ).hide("slide", { direction: "left" }, 200);
 		$("#photos-div").show("slide", { direction: "right" }, 200, function() {
 			document.selected_div = "photos-div";
-			myScroll = new iScroll( document.getElementById( "photos-div" ) );
+			setTimeout( function() {
+				var myScroll = new iScroll( document.getElementById( "photos-div" ) );	
+			}, 500 );
+			
 		});
 	}, "html");
 }
