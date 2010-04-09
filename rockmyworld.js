@@ -29,7 +29,7 @@ function handler( loc ) {
 					"</div>" +
 				"</div>" + 
 				"<div id='event" + i + "' class='event-info'>" + 
-					"<div>" + events[i].artist + "</div>"
+					"<div style='margin:-4px 0 8px 0;'>" + events[i].artist + "</div>"
 					"<div style='padding:0 8px 8px 8px;'>";
 					
 			if( events[i].description )
