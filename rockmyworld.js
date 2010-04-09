@@ -127,7 +127,7 @@ function getEventHtml( event, index, thingy )  {
 	// Use the array ID of the event to access event data
 	html += "<div onclick='openEvent(\"" + index + thingy + "\");' class='event'>" + 
 			"<div class='event-padding'>" +
-				"<div class='date'>" + d.getMonth() + "/" + d.getDate() + "</div>" +
+				"<div class='date'>" + (d.getMonth()+1) + "/" + d.getDate() + "</div>" +
 				"<span class='event-title'>" + artist + "</span>" +
 			"</div>" +
 		"</div>" + 
