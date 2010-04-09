@@ -7,7 +7,6 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<script type="text/javascript" charset="utf-8" src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
  	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAJthGY8atuRTbW0lLRBHl1hT0kzh_vIOjo5KaLA_k3-smoZ_YbBTT7B8DTKGgfLDw9RuScskT_iGjVQ&sensor=false" type="text/javascript"></script>
-	
 	<script type="text/javascript" charset="utf-8" src='iscroll.js'></script>
 	<script type="text/javascript" charset="utf-8" src='rockmyworld.js'></script>
 	<style type='text/css'>

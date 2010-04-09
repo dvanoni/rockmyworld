@@ -72,10 +72,8 @@ function loadURL( divId, URL ) {
 			$('#' + document.selected_div ).hide();
 			$('#' + divId ).show();
 			document.selected_div = divId;
-
-			setTimeout( function() {
-				$('#wrapper').slideDown();
-			}, 500);
+			$('#wrapper').slideDown();
+			myScroll = new iScroll( document.getElementById( divId ) );
 		});
 	});
 }
