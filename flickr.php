@@ -12,7 +12,7 @@ $sizes = $obj->query->results->size;
 foreach ($sizes as $key => $value) {
 	$img_src = $value->source;
 	if (preg_match('/.+_m.jpg$/', $img_src)) {
-		echo "<img src=\"$img_src\" width=\"320\"/><br/>";
+		echo "<div><img src=\"$img_src\" width=\"320\"/></div>";
 	}
 }
 
