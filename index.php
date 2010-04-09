@@ -36,7 +36,9 @@
 		</div>
 	</div>
 	<div id='loading'>
-		Loading...
+		<div id='loading-text'>
+			Loading...
+		</div>
 	</div>	
 </body>	
 </html>

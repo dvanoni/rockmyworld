@@ -12,6 +12,12 @@ img {
 }
 
 #loading {
+    width:100%;
+    height:416px;
+    background:url(images/loading-bg.jpg);
+}
+
+#loading-text {
     text-align:center;
     font-size:20px;
     color:#FFF;
