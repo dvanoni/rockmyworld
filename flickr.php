@@ -1,8 +1,3 @@
-<html>
-<head>
-<title>flickr photos for <?php echo $query; ?></title>
-</head>
-<body>
 <?php
 $query = urlencode($_REQUEST['query']);
 $url = "http://query.yahooapis.com/v1/public/yql?q=".
@@ -22,5 +17,3 @@ foreach ($sizes as $key => $value) {
 }
 
 ?>
-</body>
-</html>

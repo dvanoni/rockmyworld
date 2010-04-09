@@ -106,7 +106,7 @@ function getEventHtml( event, index, thingy )  {
 				"<a href='youtube/request.php?query=" + event.artist + "'><img src='images/youtube.png'></a>" +
 			"</div>" +
 			"<div style='float:right;'>" +
-				"<a href='flickr.php?query=" + event.artist + "'><img src='images/flickr.png'></a>" +
+				"<img src='images/flickr.png' onClick='getPhotos(\"" + event.artist + "\")'>" +
 			"</div>" +
 			"<div style='margin:8px 0 8px 0;font-size:14px;color:#EEE;'>" + event.artist + "</div>"
 			"<div style='padding:0 8px 8px 8px;'>";
@@ -138,6 +138,18 @@ function getEventHtml( event, index, thingy )  {
 		"</div>";
 	
 	return html;
+}
+
+function getPhotos( artist ) {
+	$.post("flickr.php", {'query':artist}, function(result) {
+		$("#photos-div").html(result);
+		// Hide the selected tab
+		$('#' + document.selected_div ).hide();
+		$("#photos-div").show();
+		document.selected_div = "photos-div";
+		$('#wrapper').slideDown();
+		myScroll = new iScroll( document.getElementById( divId ) );
+	}, "html");
 }
 
 function openEvent( eventId ) {
