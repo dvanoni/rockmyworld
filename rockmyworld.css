@@ -73,6 +73,9 @@ img {
 	color:#EEE;
 	margin-bottom:4px;
 	height:60px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .title {
