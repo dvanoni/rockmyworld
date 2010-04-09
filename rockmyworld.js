@@ -40,7 +40,39 @@ function handler( loc ) {
 
 					// Add 10 markers to the map at random locations
 					var point = new GLatLng( events[i].venueLocation.point.lat, events[i].venueLocation.point.long );
-					map.addOverlay(new GMarker(point, markerOptions));
+					
+					var marker = new GMarker(point, markerOptions);
+					marker.event = events[i];
+					
+				 	GEvent.addListener(marker, "click", function() {
+						var html = "<div>" + 
+										"<div style='margin:8px 0 8px 0;font-size:14px;color:#666;'>" + this.event.artist + "</div>"
+										"<div style='padding:0 8px 8px 8px;'>";
+
+						if( this.event.description )
+							html += "<div style='font-size:12px;line-height:150%;'>" +this.event.description + "</div>"
+
+						if( this.event.venueLocation.point ) {
+							if( this.event.venueName )
+								html += "<div>" + this.event.venueName + "</div>";
+
+							if( this.event.venueLocation.street )
+								html += "<div>" + this.event.venueLocation.street + "</div>";
+
+							if( this.event.venueLocation.city )
+								html += "<div>" + this.event.venueLocation.city + "</div>"
+
+						} else {
+							html += "<div class='venue-title'>VENUE</div>" + 
+									"<div>" + this.event.venueName + "</div>";
+						}
+						
+						html += "</div>" + 
+							"</div>";
+					
+				    	marker.openInfoWindowHtml( html );
+				  	});
+					map.addOverlay(marker);
 				}
 			}
 		}
