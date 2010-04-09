@@ -39,7 +39,7 @@ img {
 }
 
 #photos-div {
-	height:1400px;
+	min-height:416px;
 	display:none;
 }
 
