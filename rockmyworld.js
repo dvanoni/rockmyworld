@@ -69,6 +69,7 @@ function openEvent( eventId ) {
 
 function loadURL( divId, URL ) {
 	$('#wrapper').slideUp(function() {
+		$('#tags-div').html("<div class='tags-title'>Tagged Nearby</div>");
 		$.getJSON( URL, {lat: document.coords.latitude, long: document.coords.longitude }, function(data) {
 			
 			var html = "";
