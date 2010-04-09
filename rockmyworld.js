@@ -11,7 +11,7 @@ function handler( loc ) {
 		document.events = events;
 		
 		// Loop through events and output HTML for the event
-		var html = "";
+		var html = "<div class='title'>Concerts Nearby</div>";
 		for( var i = 0; i < events.length; i++ ) {
 			
 			var d = new Date( events[i].date * 1000 );
@@ -84,7 +84,7 @@ function openEvent( eventId ) {
 function loadURL( divId, URL ) {
 	$('#wrapper').slideUp(function() {
 		$.getJSON( URL, {lat: document.coords.latitude, long: document.coords.longitude }, function(data) {
-			var html = "<div class='tags-title'>Tagged Nearby</div>";
+			var html = "<div class='title'>Tagged Nearby</div>";
 			for( key in data ) {
 				html += "<div class='event'>" + 
 						"<div class='event-padding'>" +
