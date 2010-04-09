@@ -95,7 +95,7 @@
 	</div>
 	<div id='footer'>
 		<div class='icon' onclick='loadURL("tags-div", "tags.php");'>
-			<img src='images/tag.png' width='40px'>
+			<img src='images/tags.png' width='40px'>
 		</div>
 		<div class='icon' onclick='loadDiv("maps-div");'>
 			<img src='images/map.png' width='40px'>
