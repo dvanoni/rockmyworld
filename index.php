@@ -34,6 +34,7 @@
 		
 		#footer {
 			background: url('footer-bg.png') repeat-x;
+			background-position: 50% 100%;
 			display:block;
 			height:44px;
 			width:100%;
@@ -46,7 +47,7 @@
 			float:left;
 			width:40px;
 			height:40px;
-			margin: 0 8px;
+			margin: 2px 8px;
 		}
 				
 		.event {
