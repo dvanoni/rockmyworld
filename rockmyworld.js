@@ -22,9 +22,9 @@ function handler( loc ) {
 		
 		// Initialize Google Map with event markers
 		if (GBrowserIsCompatible()) {
-			var map = new GMap2(document.getElementById("maps-div"));
-			map.setCenter(new GLatLng( loc.coords.latitude, loc.coords.longitude ), 10 );
-			map.setUIToDefault();
+			document.map = new GMap2(document.getElementById("maps-div"));
+			document.map.setCenter(new GLatLng( loc.coords.latitude, loc.coords.longitude ), 10 );
+			document.map.setUIToDefault();
 			
 			// Go through events and add markers
 			for( var i = 0; i < events.length; i++ ) {
@@ -73,7 +73,7 @@ function handler( loc ) {
 				    	this.openInfoWindowHtml( html );
 				  	});
 				
-					map.addOverlay(marker);
+					document.map.addOverlay(marker);
 				}
 			}
 		}
@@ -82,7 +82,7 @@ function handler( loc ) {
 }
 
 function centerMap( latitude, longitude ) {
-	map.setCenter(new GLatLng( latitude, longitude ), 10 );
+	document.map.setCenter(new GLatLng( latitude, longitude ), 13 );
 	loadDiv('maps-div');
 }
 
