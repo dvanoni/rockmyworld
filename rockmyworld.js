@@ -71,10 +71,9 @@ function loadURL( divId, URL ) {
 	$('#wrapper').slideUp(function() {
 		$.getJSON( URL, {lat: document.coords.latitude, long: document.coords.longitude }, function(data) {
 			
-			var html = "";
+			var html = "<div class='tags-title'>Nearby Tags</div>";
 			for( key in data ) {
 				html += "<div class='event'>" + 
-						"<div class='title'>Nearby Tags</div>" +
 						"<div class='event-padding'>" +
 							"<span class='event-title' style='font-weight:" + (data[key] * 100) + "'>" + key + "</span>" +
 						"</div>" +
