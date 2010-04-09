@@ -25,8 +25,13 @@ img {
 	overflow:hidden;
 }
 
+#tags-div {
+	display:none;
+}
+
 #photos-div {
     height:416px;
+	display:none;
 }
 
 #maps-div {
@@ -35,10 +40,11 @@ img {
 
 #tag-results-div {
 	min-height:416px;
+	display:none;
 }
 
 #photos-div {
-	min-height:416px;
+	/*min-height:416px;*/
 	display:none;
 }
 

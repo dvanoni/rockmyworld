@@ -19,10 +19,9 @@
 	<div id='wrapper'>
 		<div id='results'>
 		</div>
-		<div id='tags-div' style='display:none;'>
-		</div>
-		<div id='tag-results-div' style='display:none;'></div>
-		<div id='photos-div' style='display:none'></div>
+		<div id='tags-div'></div>
+		<div id='tag-results-div'></div>
+		<div id='photos-div'></div>
 		<div id='maps-div'></div>
 	</div>
 	<div id='footer'>
