@@ -43,9 +43,10 @@ img {
 
 .icon {
 	float:left;
-	width:40px;
+	width:33%;
 	height:40px;
-	margin: 2px 8px;
+	padding: 2px 0;
+	text-align: center;
 }
 		
 .event {
