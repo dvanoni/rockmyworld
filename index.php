@@ -59,6 +59,14 @@
 			height:60px;
 		}
 		
+		.title {
+			background:#000;
+			color:#fff;
+			font-size:10px;
+			text-align:center;
+			padding:1px;
+		}
+		
 		.event-info {
  			clear:both;
 			display:none;
