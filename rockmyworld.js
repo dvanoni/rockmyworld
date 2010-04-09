@@ -148,7 +148,7 @@ function getPhotos( artist ) {
 		$('#' + document.selected_div ).hide("slide", { direction: "left" }, 200);
 		$("#photos-div").show("slide", { direction: "right" }, 200);
 		document.selected_div = "photos-div";
-
+		myScroll = new iScroll( document.getElementById( "photos-div" ) );
 	}, "html");
 }
 
