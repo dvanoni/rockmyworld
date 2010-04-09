@@ -62,7 +62,8 @@
 		.event-info {
  			clear:both;
 			display:none;
-			font-size:12px;
+			font-size:16px;
+			color:#FFF;
 		}
 		
 		.event-padding {
