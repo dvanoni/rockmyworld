@@ -62,7 +62,7 @@
 		.title {
 			background:#000;
 			color:#fff;
-			font-size:10px;
+			font-size:12px;
 			text-align:center;
 			padding:1px;
 		}
