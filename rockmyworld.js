@@ -125,7 +125,8 @@ function loadURL( divId, URL ) {
 
 function slideTags( tag ) {
 	// Loop through events and output HTML for the event
-	var html = "<div class='title'>Concerts Tagged \"" +tag+ "\" Nearby</div>";
+	var html = "<div class='title' style='overflow:auto;'><img src='tags-back-button.png' height=25 style='float:left' onClick='backToTags();'>Concerts Tagged \"" +tag+ "\" Nearby</div>";
+	//html += "<div style='background:#000;padding:2px;'></div>";
 	var events = document.events;
 	for( var i = 0; i < events.length; i++ ) {
 		if (events[i].tags != null) {
@@ -144,9 +145,12 @@ function slideTags( tag ) {
 	$('#tags-div').hide("slide", { direction: "left" }, 200);
 	$('#tag-results-div').show("slide", { direction: "right" }, 200);
 	document.selected_div = "tag-results-div";
-	setTimeout( function() {
-			$('#wrapper').slideDown();
-		}, 500);
+}
+
+function backToTags() {
+	$('#tag-results-div').hide("slide", { direction: "right" }, 200);
+	$('#tags-div').show("slide", { direction: "left" }, 200);
+	document.selected_div = "tags-div";
 }
 
 function loadDiv( divId ) {
