@@ -15,7 +15,7 @@
 			margin:0;	
 			font-family:'Trebuchet MS',Verdana,Arial,sans-serif;
 			font-size:12px;
-			background:#493736;
+			background:#595E64;
 			line-height:150%;
 		}
 		
