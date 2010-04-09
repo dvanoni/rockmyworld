@@ -15,5 +15,5 @@ $video = $result_object->feed->entry[0];
 //print_r($video);
 //print_r($video->title);
 $href = $video->link[0]->href;
-echo "<a href=\"$href\">$href</a>";
+header("Location: $href");
 ?>
