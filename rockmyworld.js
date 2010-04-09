@@ -83,6 +83,7 @@ function handler( loc ) {
 
 function centerMap( latitude, longitude ) {
 	map.setCenter(new GLatLng( latitude, longitude ), 10 );
+	loadDiv('maps-div');
 }
 
 function getEventHtml( event, index, thingy )  {
