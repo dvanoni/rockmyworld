@@ -29,7 +29,10 @@ function handler( loc ) {
 					"</div>" +
 				"</div>" + 
 				"<div id='event" + i + "' class='event-info'>" + 
-					"<div style='padding:0 8px 8px 8px;'><div style='float:right;'><img src='" + events[i].image + "'></div>";
+					"<div style='padding:0 8px 8px 8px;'>";
+					
+			if( events[i].image.content )
+				html += "<div style='float:right;'><img src='" + events[i].image.content + "'></div>";
 					
 			if( events[i].venueLocation.point ) {
 				html += "<div class='venue-title'>VENUE</div>";

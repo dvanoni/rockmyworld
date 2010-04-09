@@ -75,7 +75,7 @@
 		.event-info {
  			clear:both;
 			display:none;
-			font-size:16px;
+			font-size:14px;
 			color:#AAA;
 		}
 		
