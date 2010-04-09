@@ -5,7 +5,12 @@ function handler( loc ) {
 	
 	var url = 'lastfm.php';
 	$.getJSON( url, {lat: latitude, long: longitude }, function(data) {
+		
+		// Save the event data
 		var events =  data;
+		document.events = events;
+		
+		// Loop through events and output HTML for the event
 		var html = "";
 		for( var i = 0; i < events.length; i++ ) {
 			
@@ -15,8 +20,9 @@ function handler( loc ) {
 			if( events[i].artist.length > 22 ) {
 				artist = events[i].artist.substr(0, 22) + "&hellip;";
 			}
-								
-			html += "<div onclick='alert(\"adfjklj\");' class='event'>" + 
+			
+			// Use the array ID of the event to access event data
+			html += "<div onclick='openEvent(" + i + ");' class='event'>" + 
 					"<div class='event-padding'>" +
 						"<div class='date'>" + d.getMonth() + "/" + d.getDate() + "</div>" +
 						"<span class='event-title'>" + artist + "</span>" +
@@ -24,9 +30,11 @@ function handler( loc ) {
 				"</div>";
 		}
 		
+		// Append HTML to the page
 		$('#results').append( html );
 		myScroll = new iScroll( document.getElementById('results') );
 		
+		// Initialize Google Map with event markers
 		if (GBrowserIsCompatible()) {
 			var map = new GMap2(document.getElementById("maps-div"));
 			map.setCenter(new GLatLng( loc.coords.latitude, loc.coords.longitude ), 10 );
@@ -52,6 +60,10 @@ function handler( loc ) {
 		}
 		
 	});
+}
+
+function openEvent( eventId ) {
+	$("#results").hide("slide", { direction: "down" }, 1000);
 }
 
 function loadURL( divId, URL ) {
