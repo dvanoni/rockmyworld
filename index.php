@@ -22,7 +22,9 @@
 		<div id='tag-results-div'></div>
 		<div id='photos-div'></div>
 		<div id='lighter-div'>
-			<img src='lighter.gif'>
+			<div style='margin-top:172px;'>
+				<img src='lighter.gif'>
+			</div>
 		</div>
 		<div id='maps-div'></div>
 	</div>
