@@ -4,9 +4,10 @@ function reverseGeoLookup($lat, $lng) {
 	$apikey= 'ABQIAAAAJthGY8atuRTbW0lLRBHl1hT0kzh_vIOjo5KaLA_k3-smoZ_YbBTT7B8DTKGgfLDw9RuScskT_iGjVQ';
 	$gmapsquery ="http://maps.google.com/maps/api/geocode/json?latlng=$lat,$lng&sensor=true&false&key=$apikey";
 	
-	$gs = curl_init($gmapsquery);
-	curl_setopt($gs, CURLOPT_RETURNTRANSFER, true);
-	$js = curl_exec($gs);
+	// $gs = curl_init($gmapsquery);
+	// curl_setopt($gs, CURLOPT_RETURNTRANSFER, true);
+	// $js = curl_exec($gs);
+	$js = file_get_contents($gmapsquery);
 	$p = json_decode($js);
 	
 	$result = array('city'=>'', 'state'=>'');

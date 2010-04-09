@@ -1,3 +1,5 @@
+var myScroll;
+
 function handler( loc ) {
 	var longitude = loc.coords.longitude;
 	var latitude  = loc.coords.latitude;
@@ -150,7 +152,7 @@ function getPhotos( artist ) {
 		$('#' + document.selected_div ).hide("slide", { direction: "left" }, 200);
 		$("#photos-div").show("slide", { direction: "right" }, 200, function() {
 			document.selected_div = "photos-div";
-			var myScroll = new iScroll( document.getElementById( "photos-div" ) );
+			myScroll = new iScroll( document.getElementById( "photos-div" ) );
 		});
 	}, "html");
 }
@@ -177,7 +179,7 @@ function loadURL( divId, URL ) {
 			$('#' + divId ).show();
 			document.selected_div = divId;
 			$('#wrapper').slideDown();
-			var myScroll = new iScroll( document.getElementById( divId ) );
+			myScroll = new iScroll( document.getElementById( divId ) );
 		});
 	});
 }

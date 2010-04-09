@@ -25,9 +25,10 @@ class JamBase {
 		
 		$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
 		// Make call with cURL
-		$session = curl_init($yql_query_url);
-		curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
-		$json = curl_exec($session);
+		// $session = curl_init($yql_query_url);
+		// curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+		// $json = curl_exec($session);
+		$json = file_get_contents($yql_query_url);
 		// Convert JSON to PHP object 
 		$phpObj =  json_decode($json);
 	
