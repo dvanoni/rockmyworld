@@ -21,12 +21,12 @@
 		<div id='tags-div'></div>
 		<div id='tag-results-div'></div>
 		<div id='photos-div'></div>
+		<div id='maps-div'></div>
 		<div id='lighter-div'>
 			<div style='padding-top:94px;'>
 				<img src='lighter.gif'>
 			</div>
 		</div>
-		<div id='maps-div'></div>
 	</div>
 	<div id='footer'>
 		<div class='icon' onclick='loadDiv("results");'>
@@ -39,7 +39,7 @@
 			<img src='images/map.png' width='40px'>
 		</div>
 		<div class='icon' onclick='loadDiv("lighter-div");'>
-			<img src='images/map.png' width='40px'>
+			<img src='lighter.png' width='40px'>
 		</div>
 	</div>
 	<div id='loading'>
